@@ -69,12 +69,25 @@ def running_time(songs:list[data.Song],playlist:list[int])->data.Duration: # tak
 
 # Part 5
 
-# def validate_route (list1:list[list[str]],list2:list[str])->bool:
-
-    # if valid or list1 == [] or len(list1)==1:
-      #  return True
-   #  if invalid:
-      #  return False
+def validate_route (links:list[list[str]],names:list[str])->bool: # takes in links between cities as a list and a names
+    # list of str and returns a bool that indicates whether the route is valid or not
+    answers = []
+    if names == [] or len(names) == 1:
+        return True
+    for i in range(len(links)-1):
+        if (links[i][0] == links[i+1][0] or
+                links[i][0] == links[i+1][1] or
+                links[i][1] == links[i+1][0] or
+                links[i][1] == links[i+1][1]):
+            answers.append(True)
+        else:
+            answers.append(False)
+    if False in answers:
+        return False
+    elif names == [] or len(names) == 1:
+        return True
+    else:
+        return True
 
 
 

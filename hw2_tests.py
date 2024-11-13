@@ -91,6 +91,31 @@ class TestCases(unittest.TestCase):
 
     # Part 5
 
+    def test_validate_route_1(self):
+        links = [
+    ['san luis obispo', 'santa margarita'],
+    ['san luis obispo', 'pismo beach'],
+    ['atascadero', 'santa margarita'],
+    ['atascadero', 'creston']
+   ]
+        names = ['san luis obispo','santa margarita','pismo beach','atascadero','creston']
+        expected = hw2.validate_route(links,names)
+        result = False
+        self.assertEqual(expected,result)
+
+    def test_validate_route_2(self):
+        links = [
+            ['san luis obispo', 'santa margarita'],
+            ['san luis obispo', 'pismo beach'],
+            ['pismo beach','atascadero'],
+            ['atascadero', 'santa margarita'],
+            ['atascadero', 'creston']
+        ]
+        names = ['san luis obispo', 'santa margarita', 'pismo beach', 'atascadero', 'creston']
+        expected = hw2.validate_route(links, names)
+        result = True
+        self.assertEqual(expected, result)
+
 
     # Part 6
 
